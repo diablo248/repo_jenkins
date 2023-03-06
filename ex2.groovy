@@ -30,7 +30,7 @@ pipeline {
                 stage ('STAGE E') {
                     agent any
                     steps {
-                        echo "STAGE D"
+                        echo "STAGE E"
                     }
                 }
         }
