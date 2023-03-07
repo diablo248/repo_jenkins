@@ -15,6 +15,6 @@ def gitCommit(Map params) {
 def gitPush(Map params) {
     withCredentials([usernamePassword(credentialsId: params.credentialsId, usernameVariable: 'user', passwordVariable: 'passwd')])
       {
-       sh "git push https://${user}:${passwd}@github.com/${user}/${params.gitHubPath}.git"
+       sh "git push https://${passwd}@github.com/${user}/${params.gitHubPath}.git"
       }
 }
