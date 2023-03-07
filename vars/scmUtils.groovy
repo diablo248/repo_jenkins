@@ -13,7 +13,7 @@ def gitCommit(Map params) {
 }
 
 def gitPush(Map params) {
-    withCredentials([usernamePassword(credentialsId: params.credentialsId, usernameVariable: 'user', passwordVariable: 'passwd')])
+    withCredentials([usernamePassword(credentialsId: params.credentials, usernameVariable: 'user', passwordVariable: 'passwd')])
       {
        sh "git push https://\${passwd}@github.com/${user}/${params.gitHubPath}.git"
       }
