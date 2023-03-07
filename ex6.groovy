@@ -25,7 +25,7 @@ pipeline {
         }
         stage("Do something") {
             steps {
-                sh "echo `12345` > file.txt"
+                sh "echo 12345 > file.txt"
             }
         }
 
