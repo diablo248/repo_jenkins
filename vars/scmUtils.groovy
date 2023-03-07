@@ -9,7 +9,7 @@ def setGitUserInfo(Map params) {
                    
 def gitCommit(Map params) {
   sh "git add ${params.path}"
-  sh "git commit -m ${params.msg}"
+  sh "git commit -m '${params.msg}'"
 }
 
 def gitPush(Map params) {
