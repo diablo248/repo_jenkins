@@ -44,7 +44,8 @@ pipeline {
                         
                     scmUtils.gitPush(
                         credentials: env.creds, 
-                        gitHubPath: env.repo)
+                        gitHubPath: env.repo,
+                        branch: env.branch)
                     }
                     
                 }
