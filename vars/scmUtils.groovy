@@ -1,5 +1,10 @@
 def gitCheckout(Map params) {
-    checkout scmGit(branches: [[name: params.branch]], extensions: [], userRemoteConfigs: [[credentialsId: params.credentials, url: params.url]])
+    checkout([
+        $class: 'GitSCM',
+        branches: [[name:  params.branch ]],
+        userRemoteConfigs: [[ url: params.url, credentialsId: params.credentials ]],
+        extensions: [[$class: 'LocalBranch']]
+    ])
 }
 
 def setGitUserInfo(Map params) {
