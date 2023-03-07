@@ -20,6 +20,6 @@ def gitCommit(Map params) {
 def gitPush(Map params) {
     withCredentials([usernamePassword(credentialsId: params.credentials, usernameVariable: 'user', passwordVariable: 'passwd')])
       {
-        sh "git push https://${passwd}@github.com/${params.gitHubPath}.git"
+          sh "git push --set-upstream https://${passwd}@github.com/${params.gitHubPath}.git ${param.branch}"
       }
 }
